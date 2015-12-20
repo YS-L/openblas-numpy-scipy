@@ -1,0 +1,18 @@
+#!/bin/bash
+
+mkdir -p $HOME/install
+
+cd OpenBLAS
+sudo apt-get install -y gfortran build-essential
+make FC=gfortran
+make install PREFIX=$HOME/install -j8
+
+SHELLRC=$HOME/.bashrc
+
+echo "
+# OpenBLAS
+export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$HOME/install/lib
+export OPENBLAS_NUM_THREADS=1
+" >> $SHELLRC
+
+source $SHELLRC

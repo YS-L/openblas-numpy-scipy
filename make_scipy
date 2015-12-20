@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd scipy
+git checkout v0.16.0
+git clean -xdf
+
+python setup.py build
+python setup.py install --user

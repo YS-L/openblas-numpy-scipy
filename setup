@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./get_sources
+./make_openblas
+./make_numpy
+./make_scipy

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd numpy
+git checkout v1.10.0
+git clean -xdf
+
+echo "
+[openblas]
+libraries = openblas
+library_dirs = $HOME/install/lib
+include_dirs = $HOME/install/include
+" > site.cfg
+
+sudo apt-get install -y python-dev python-pip
+pip install --upgrade cython==0.22 --user
+pip install nose --user
+python setup.py install --user
