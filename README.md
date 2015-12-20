@@ -12,9 +12,12 @@ $ setup
 ```
 and the fast numpy stack linked with OpenBLAS will be compiled and installed.
 
-The OpenBLAS library will be installed to ``$HOME/install``. The numpy and
-scipy will be installed with the ``--user`` flags, which means that the
-packages will reside in ``$HOME/.local/``.
+During the process, sudo is requested only for the installation of build
+dependencies from the official repository. OpenBLAS, numpy and scipy will be
+compiled from source and installed locally for the user. The OpenBLAS library
+will be installed to ``$HOME/install``. The numpy and scipy libraries will be
+installed with the ``--user`` flag, which means that the packages will reside
+in ``$HOME/.local/``.
 
 Or manually, run the following in sequence (which is what the above ``setup``
 script does):
